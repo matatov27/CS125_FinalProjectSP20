@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -19,6 +20,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private boolean gameOver = false;
     private long gameOverTime;
     private Rect r = new Rect();
+    private MediaPlayer mediaPlayer;
 
     public GamePanel(Context context) {
         super(context);
