@@ -25,7 +25,7 @@ public class ObstacleManager {
     }
 
     private void populateObstacles() {
-        int currentY = 5 * Constants.SCREEN_HEIGHT / 4;
+        int currentY = -5 * Constants.SCREEN_HEIGHT / 4;
         while(currentY < 0) {
             int xStart = (int) (Math.random() * (Constants.SCREEN_WIDTH - playerGap));
             obstacles.add(new Obstacle(obstacleHeight, color, xStart, currentY, playerGap));

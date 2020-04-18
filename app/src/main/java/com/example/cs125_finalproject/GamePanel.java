@@ -22,7 +22,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         player = new RectPlayer(new Rect(100, 100,200, 200),
                 Color.rgb(255, 0,0));
         playerPoint = new Point(150, 150);
-        obstacleManager = new ObstacleManager(200, 350,75, Color.BLACK);
+        obstacleManager = new ObstacleManager(200, 350,75, Color.BLUE);
         setFocusable(true);
 
     }
