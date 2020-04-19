@@ -66,6 +66,11 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                if(MainActivity.startGame == 0) {
+                    movingPlayer = true;
+                    MainActivity.startGame++;
+                    break;
+                }
                 if (!gameOver && player.getRectangle().contains((int) event.getX(),
                         (int) event.getY())) {
                     movingPlayer = true;
@@ -74,6 +79,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 if(gameOver && System.currentTimeMillis() - gameOverTime >= 500) {
                     reset();
                     gameOver = false;
+                    MainActivity.startGame = 0;
                 }
             case MotionEvent.ACTION_MOVE:
                 if (movingPlayer && !gameOver) {
@@ -91,7 +97,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void update(){
         if (!gameOver) {
             player.update(playerPoint);
-            obstacleManager.update();
+            if (MainActivity.startGame > 0) {
+                obstacleManager.update();
+            }
             if (obstacleManager.playerCollide(player)) {
                 gameOver = true;
                 gameOverTime = System.currentTimeMillis();
@@ -110,6 +118,12 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             paint.setTextSize(100);
             paint.setColor(Color.BLACK);
             drawCenterText(canvas, paint, "GAME OVER");
+        }
+        if (MainActivity.startGame == 0) {
+            Paint paint =  new Paint();
+            paint.setTextSize(80);
+            paint.setColor(Color.BLACK);
+            drawCenterText(canvas, paint, "TAP TO START");
         }
     }
     private void drawCenterText(Canvas canvas, Paint paint, String text) {

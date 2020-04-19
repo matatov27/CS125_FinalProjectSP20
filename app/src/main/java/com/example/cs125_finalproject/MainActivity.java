@@ -1,15 +1,16 @@
 package com.example.cs125_finalproject;
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
 public class MainActivity extends Activity {
     private MediaPlayer mediaPlayer;
+    public MotionEvent event;
+    public static int startGame = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
