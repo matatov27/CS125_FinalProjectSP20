@@ -16,13 +16,16 @@ public class ObstacleManager {
     private long startTime;
     private long initTime;
     private int score = 0;
+    //the highScore part is also not from the tutorial, just something I added
+    public static int highScore;
 
 
-    public ObstacleManager(int playerGap, int obstacleGap, int obstacleHeight, int color) {
+    public ObstacleManager(int playerGap, int obstacleGap, int obstacleHeight, int color, int highScore) {
         this.playerGap = playerGap;
         this.obstacleGap = obstacleGap;
         this.obstacleHeight = obstacleHeight;
         this.color = color;
+        this.highScore = highScore;
         startTime = initTime = System.currentTimeMillis();
         obstacles = new ArrayList<>();
         populateObstacles();
@@ -61,6 +64,9 @@ public class ObstacleManager {
             obstacles.remove(obstacles.size() - 1);
             score++;
         }
+        if (score > highScore) {
+            highScore = score;
+        }
     }
     public void draw(Canvas canvas) {
         for(Obstacle ob : obstacles) {
@@ -68,7 +74,9 @@ public class ObstacleManager {
             Paint paint = new Paint();
             paint.setTextSize(50);
             paint.setColor(Color.BLACK);
-            canvas.drawText("" + score, 50, 50, paint);
+            canvas.drawText("" + score, 50, 100, paint);
+            canvas.drawText("High Score: " + highScore, (2 * Constants.SCREEN_WIDTH / 3),
+                    100, paint);
         }
     }
 }

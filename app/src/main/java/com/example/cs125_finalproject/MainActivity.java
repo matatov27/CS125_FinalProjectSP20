@@ -1,5 +1,7 @@
 package com.example.cs125_finalproject;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;

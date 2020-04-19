@@ -30,17 +30,16 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
                 Color.rgb(255, 0,0));
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(200, 350,75, Color.BLUE);
+        obstacleManager = new ObstacleManager(200, 350,75, Color.BLUE, ObstacleManager.highScore);
         setFocusable(true);
 
     }
     public void reset() {
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(200, 350,75, Color.BLUE);
+        obstacleManager = new ObstacleManager(200, 350,75, Color.BLUE, ObstacleManager.highScore);
         movingPlayer = false;
     }
-
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) { }
 
