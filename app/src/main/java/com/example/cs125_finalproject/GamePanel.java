@@ -14,16 +14,14 @@ import android.view.SurfaceView;
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private SceneManager manager;
+    private Rect r = new Rect();
 
     public GamePanel(Context context) {
         super(context);
         getHolder().addCallback(this);
         thread = new MainThread(getHolder(), this);
-
         manager = new SceneManager();
-
         setFocusable(true);
-
     }
 
     @Override
@@ -51,7 +49,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         manager.recieveTouch(event);
-
         return true;
         //return super.onTouchEvent(event);
     }
@@ -62,16 +59,25 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void draw(Canvas canvas) {
+        super.draw(canvas);
         manager.draw(canvas);
 
-        super.draw(canvas);
-
-        /*if (MainActivity.startGame == 0) {
+        if (MainActivity.startGame == 0) {
             Paint paint =  new Paint();
             paint.setTextSize(80);
             paint.setColor(Color.BLACK);
             drawCenterText(canvas, paint, "TAP TO START");
-        }*/
+        }
+    }
+    private void drawCenterText(Canvas canvas, Paint paint, String text) {
+        paint.setTextAlign(Paint.Align.LEFT);
+        canvas.getClipBounds(r);
+        int cHeight = r.height();
+        int cWidth = r.width();
+        paint.getTextBounds(text, 0, text.length(), r);
+        float x = cWidth / 2f - r.width() / 2f - r.left;
+        float y = cHeight / 2f - r.height() / 2f - r.bottom;
+        canvas.drawText(text, x, y, paint);
     }
 
 }

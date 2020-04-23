@@ -16,7 +16,6 @@ public class GameplayScene implements Scene {
     private boolean gameOver = false;
     private long gameOverTime;
     private Rect r = new Rect();
-    private MediaPlayer mediaPlayer;
 
     public GameplayScene() {
         player = new RectPlayer(new Rect(100, 100,200, 200),
@@ -56,7 +55,7 @@ public class GameplayScene implements Scene {
                 if(gameOver && System.currentTimeMillis() - gameOverTime >= 500) {
                     reset();
                     gameOver = false;
-                    MainActivity.startGame = 0;
+                    //MainActivity.startGame = 0;
                 }
             case MotionEvent.ACTION_MOVE:
                 if (movingPlayer && !gameOver) {
@@ -87,9 +86,9 @@ public class GameplayScene implements Scene {
     public void update() {
         if (!gameOver) {
             player.update(playerPoint);
-            if (MainActivity.startGame > 0) {
-                obstacleManager.update();
-            }
+            obstacleManager.update();
+            /*if (MainActivity.startGame > 0) {
+            }*/
             if (obstacleManager.playerCollide(player)) {
                 gameOver = true;
                 gameOverTime = System.currentTimeMillis();
