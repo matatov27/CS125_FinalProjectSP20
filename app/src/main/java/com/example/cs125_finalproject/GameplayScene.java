@@ -86,7 +86,7 @@ public class GameplayScene implements Scene {
             Paint paint =  new Paint();
             paint.setTextSize(100);
             paint.setColor(Color.BLACK);
-            drawCenterText(canvas, paint, "GAME OVER");
+            drawCenterText(canvas, paint, "Game over");
         }
     }
 
