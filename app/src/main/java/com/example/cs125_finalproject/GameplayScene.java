@@ -27,7 +27,7 @@ public class GameplayScene implements Scene {
                 Color.rgb(255, 0,0));
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(300, 450,75, Color.BLUE, ObstacleManager.highScore);
+        obstacleManager = new ObstacleManager(300, 450,300, Color.GREEN, ObstacleManager.highScore);
 
         orientationData = new OrientationData();
         orientationData.register();
@@ -36,7 +36,7 @@ public class GameplayScene implements Scene {
     public void reset() {
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(300, 450,75, Color.BLUE, ObstacleManager.highScore);
+        obstacleManager = new ObstacleManager(300, 450,300, Color.GREEN, ObstacleManager.highScore);
         movingPlayer = false;
     }
 

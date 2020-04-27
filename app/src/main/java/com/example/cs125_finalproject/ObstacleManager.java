@@ -44,7 +44,7 @@ public class ObstacleManager {
         int currentY = -5 * Constants.SCREEN_HEIGHT / 4;
         while(currentY < 0) {
             int xStart = (int) (Math.random() * (Constants.SCREEN_WIDTH - playerGap));
-            obstacles.add(new Obstacle(obstacleHeight, color, xStart, currentY, playerGap));
+            obstacles.add(new Obstacle(obstacleHeight, xStart, currentY, playerGap));
             currentY += obstacleHeight + obstacleGap;
         }
     }
@@ -60,7 +60,7 @@ public class ObstacleManager {
         }
         if (obstacles.get(obstacles.size() - 1).getRectangle().top >= Constants.SCREEN_HEIGHT) {
             int xStart = (int) (Math.random() * (Constants.SCREEN_WIDTH - playerGap));
-            obstacles.add(0, new Obstacle(obstacleHeight, color, xStart,
+            obstacles.add(0, new Obstacle(obstacleHeight, xStart,
                     obstacles.get(0).getRectangle().top - obstacleHeight - obstacleGap,
                     playerGap));
             obstacles.remove(obstacles.size() - 1);
