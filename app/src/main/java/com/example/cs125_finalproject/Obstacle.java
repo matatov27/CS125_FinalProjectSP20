@@ -42,10 +42,11 @@ public class Obstacle implements GameObject {
     public void draw(Canvas canvas) {
         Paint paint = new Paint();
         Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
+        drawable.mutate();
         drawable.setBounds(rectangle);
         drawable.draw(canvas);
         Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-        drawable.setBounds(rectangle2);
-        drawable.draw(canvas);
+        drawable2.setBounds(rectangle2);
+        drawable2.draw(canvas);
     }
 }

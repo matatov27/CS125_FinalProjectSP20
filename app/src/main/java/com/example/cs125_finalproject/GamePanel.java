@@ -63,13 +63,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         manager.draw(canvas);
-
-        if (GameActivity.startGame == 0) {
-            Paint paint =  new Paint();
-            paint.setTextSize(80);
-            paint.setColor(Color.BLACK);
-            drawCenterText(canvas, paint, "TAP TO START");
-        }
     }
     private void drawCenterText(Canvas canvas, Paint paint, String text) {
         paint.setTextAlign(Paint.Align.LEFT);
