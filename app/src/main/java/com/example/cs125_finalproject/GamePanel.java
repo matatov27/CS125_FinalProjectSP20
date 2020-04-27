@@ -64,7 +64,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         super.draw(canvas);
         manager.draw(canvas);
 
-        if (MainActivity.startGame == 0) {
+        if (GameActivity.startGame == 0) {
             Paint paint =  new Paint();
             paint.setTextSize(80);
             paint.setColor(Color.BLACK);

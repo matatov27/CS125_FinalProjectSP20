@@ -49,9 +49,9 @@ public class GameplayScene implements Scene {
     public void recieveTouch(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if(MainActivity.startGame == 0) {
+                if(GameActivity.startGame == 0) {
                     movingPlayer = true;
-                    MainActivity.startGame++;
+                    GameActivity.startGame++;
                     break;
                 }
                 if (!gameOver && player.getRectangle().contains((int) event.getX(),
@@ -86,7 +86,17 @@ public class GameplayScene implements Scene {
             Paint paint =  new Paint();
             paint.setTextSize(100);
             paint.setColor(Color.BLACK);
-            drawCenterText(canvas, paint, "Game over");
+            drawCenterText(canvas, paint, "GAME OVER");
+            paint.setTextSize(50);
+            paint.setTextAlign(Paint.Align.LEFT);
+            canvas.getClipBounds(r);
+            int cHeight = r.height();
+            int cWidth = r.width();
+            String text = "keep your distance...";
+            paint.getTextBounds(text, 0, text.length(), r);
+            float x = cWidth / 2f - r.width() / 2f - r.left;
+            float y = cHeight / 2f - r.height() / 2f - r.bottom;
+            canvas.drawText(text, x, y + 100, paint);
         }
     }
 
