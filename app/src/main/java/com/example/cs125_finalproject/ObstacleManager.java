@@ -12,7 +12,6 @@ public class ObstacleManager {
     private int playerGap;
     private int obstacleGap;
     private int obstacleHeight;
-    private int color;
     private long startTime;
     private long initTime;
     private int score = 0;
@@ -20,11 +19,10 @@ public class ObstacleManager {
     public static int highScore;
 
 
-    public ObstacleManager(int playerGap, int obstacleGap, int obstacleHeight, int color, int highScore) {
+    public ObstacleManager(int playerGap, int obstacleGap, int obstacleHeight, int highScore) {
         this.playerGap = playerGap;
         this.obstacleGap = obstacleGap;
         this.obstacleHeight = obstacleHeight;
-        this.color = color;
         this.highScore = highScore;
         startTime = initTime = System.currentTimeMillis();
         obstacles = new ArrayList<>();

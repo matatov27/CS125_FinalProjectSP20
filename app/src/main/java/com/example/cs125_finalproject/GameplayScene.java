@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.media.MediaPlayer;
 import android.view.MotionEvent;
 
 public class GameplayScene implements Scene {
@@ -27,7 +26,7 @@ public class GameplayScene implements Scene {
                 Color.rgb(255, 0,0));
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(300, 450,300, Color.GREEN, ObstacleManager.highScore);
+        obstacleManager = new ObstacleManager(300, 450,300, ObstacleManager.highScore);
 
         orientationData = new OrientationData();
         orientationData.register();
@@ -36,7 +35,7 @@ public class GameplayScene implements Scene {
     public void reset() {
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
-        obstacleManager = new ObstacleManager(300, 450,300, Color.GREEN, ObstacleManager.highScore);
+        obstacleManager = new ObstacleManager(300, 450,300, ObstacleManager.highScore);
         movingPlayer = false;
     }
 
@@ -86,7 +85,7 @@ public class GameplayScene implements Scene {
             Paint paint =  new Paint();
             paint.setTextSize(100);
             paint.setColor(Color.BLACK);
-            drawCenterText(canvas, paint, "GAME OVER");
+            drawCenterText(canvas, paint);
             paint.setTextSize(50);
             paint.setTextAlign(Paint.Align.LEFT);
             canvas.getClipBounds(r);
@@ -137,14 +136,14 @@ public class GameplayScene implements Scene {
         }
 
     }
-    private void drawCenterText(Canvas canvas, Paint paint, String text) {
+    private void drawCenterText(Canvas canvas, Paint paint) {
         paint.setTextAlign(Paint.Align.LEFT);
         canvas.getClipBounds(r);
         int cHeight = r.height();
         int cWidth = r.width();
-        paint.getTextBounds(text, 0, text.length(), r);
+        paint.getTextBounds("GAME OVER", 0, "GAME OVER".length(), r);
         float x = cWidth / 2f - r.width() / 2f - r.left;
         float y = cHeight / 2f - r.height() / 2f - r.bottom;
-        canvas.drawText(text, x, y, paint);
+        canvas.drawText("GAME OVER", x, y, paint);
     }
 }

@@ -4,13 +4,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 
 public class RectPlayer implements GameObject {
     private Rect rectangle;
-    private int color;
 
     private Animation idle;
     private Animation walkRight;
@@ -23,7 +21,6 @@ public class RectPlayer implements GameObject {
 
     public RectPlayer(Rect rectangle, int color) {
         this.rectangle = rectangle;
-        this.color = color;
 
         BitmapFactory bf = new BitmapFactory();
         Bitmap idleImg = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue2);
