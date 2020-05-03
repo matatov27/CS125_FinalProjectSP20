@@ -2,11 +2,7 @@ package com.example.cs125_finalproject;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Point;
 import android.graphics.Rect;
-import android.media.MediaPlayer;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -52,7 +48,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public boolean onTouchEvent(MotionEvent event) {
         manager.recieveTouch(event);
         return true;
-        //return super.onTouchEvent(event);
     }
 
     public void update(){
@@ -63,16 +58,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         manager.draw(canvas);
-    }
-    private void drawCenterText(Canvas canvas, Paint paint, String text) {
-        paint.setTextAlign(Paint.Align.LEFT);
-        canvas.getClipBounds(r);
-        int cHeight = r.height();
-        int cWidth = r.width();
-        paint.getTextBounds(text, 0, text.length(), r);
-        float x = cWidth / 2f - r.width() / 2f - r.left;
-        float y = cHeight / 2f - r.height() / 2f - r.bottom;
-        canvas.drawText(text, x, y, paint);
     }
 
 }

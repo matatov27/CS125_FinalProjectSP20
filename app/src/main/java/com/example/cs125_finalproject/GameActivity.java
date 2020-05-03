@@ -1,7 +1,5 @@
 package com.example.cs125_finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;

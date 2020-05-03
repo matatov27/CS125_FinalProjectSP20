@@ -24,7 +24,7 @@ public class MainThread extends Thread {
     @Override
     public void run() {
         long startTime;
-        long timeMillis = 1000 / MAX_FPS;
+        long timeMillis;
         long waitTime;
         int frameCount = 0;
         long totalTime = 0;

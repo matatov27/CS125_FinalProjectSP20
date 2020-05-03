@@ -19,13 +19,12 @@ public class RectPlayer implements GameObject {
         return rectangle;
     }
 
-    public RectPlayer(Rect rectangle, int color) {
+    public RectPlayer(Rect rectangle) {
         this.rectangle = rectangle;
 
-        BitmapFactory bf = new BitmapFactory();
-        Bitmap idleImg = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue2);
-        Bitmap walk1 = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk12);
-        Bitmap walk2 = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk22);
+        Bitmap idleImg = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue2);
+        Bitmap walk1 = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk12);
+        Bitmap walk2 = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk22);
 
         idle = new Animation(new Bitmap[]{idleImg}, 2);
         walkRight = new Animation(new Bitmap[]{walk1, walk2}, 0.5f);
@@ -42,9 +41,6 @@ public class RectPlayer implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
-        /*Paint paint = new Paint();
-        paint.setColor(color);
-        canvas.drawRect(rectangle, paint);*/
         animManager.draw(canvas, rectangle);
     }
 

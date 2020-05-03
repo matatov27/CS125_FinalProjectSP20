@@ -22,8 +22,7 @@ public class GameplayScene implements Scene {
     private Rect r = new Rect();
 
     public GameplayScene() {
-        player = new RectPlayer(new Rect(100, 100,200, 200),
-                Color.rgb(255, 0,0));
+        player = new RectPlayer(new Rect(100, 100,200, 200));
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
         obstacleManager = new ObstacleManager(300, 450,300, ObstacleManager.highScore);
@@ -62,7 +61,6 @@ public class GameplayScene implements Scene {
                     reset();
                     gameOver = false;
                     orientationData.newGame();
-                    //MainActivity.startGame = 0;
                 }
             case MotionEvent.ACTION_MOVE:
                 if (movingPlayer && !gameOver) {
