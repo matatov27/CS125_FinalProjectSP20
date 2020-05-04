@@ -21,9 +21,6 @@ public class Obstacle implements GameObject {
     public Rect getRectangle() {
         return rectangle;
     }
-    public Rect getRectangle2() {
-        return rectangle2;
-    }
 
     public void incrementY(float y) {
         rectangle.top += y;
@@ -43,15 +40,14 @@ public class Obstacle implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
-        /*Bitmap mBitmap = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2);
-        mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, getRectangle().width(), getRectangle().height());
-        canvas.drawBitmap(mBitmap, rectangle.left, rectangle.top, null);
-        Bitmap mBitmap2 = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2);
-        mBitmap = Bitmap.createBitmap(mBitmap2, getRectangle().width() + getRectangle2().left, 0, getRectangle2().width(), getRectangle2().height());
-        canvas.drawBitmap(mBitmap, rectangle2.left, rectangle2.top, null);
+        Bitmap mBitmap = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2min);
+        Bitmap mBitmap1 = Bitmap.createBitmap(mBitmap, 0, 0, rectangle.width(), rectangle.height());
+        canvas.drawBitmap(mBitmap1, rectangle.left, rectangle.top, null);
+        Bitmap mBitmap2 = Bitmap.createBitmap(mBitmap, rectangle.width() + rectangle2.left, 0, rectangle2.width(), rectangle2.height());
+        canvas.drawBitmap(mBitmap2, rectangle2.left, rectangle2.top, null);
 
-    }*/
-        if (rectangle.width() < Constants.SCREEN_WIDTH / 8) {
+    }
+        /*if (rectangle.width() < Constants.SCREEN_WIDTH / 8) {
             Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus_shorter);
             drawable.mutate();
             drawable.setBounds(rectangle);
@@ -92,5 +88,5 @@ public class Obstacle implements GameObject {
             drawable2.setBounds(rectangle2);
             drawable2.draw(canvas);
         }
-    }
+    }*/
 }
