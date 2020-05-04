@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 
 
 public class Obstacle implements GameObject {
@@ -47,46 +46,4 @@ public class Obstacle implements GameObject {
         canvas.drawBitmap(mBitmap2, rectangle2.left, rectangle2.top, null);
 
     }
-        /*if (rectangle.width() < Constants.SCREEN_WIDTH / 8) {
-            Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus_shorter);
-            drawable.mutate();
-            drawable.setBounds(rectangle);
-            drawable.draw(canvas);
-            Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable2.setBounds(rectangle2);
-            drawable2.draw(canvas);
-        } else if (rectangle.width() < Constants.SCREEN_WIDTH / 4) {
-            Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus_short);
-            drawable.mutate();
-            drawable.setBounds(rectangle);
-            drawable.draw(canvas);
-            Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable2.setBounds(rectangle2);
-            drawable2.draw(canvas);
-        } else if (rectangle2.width() < Constants.SCREEN_WIDTH / 8) {
-            Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus_shorter);
-            drawable.mutate();
-            drawable.setBounds(rectangle2);
-            drawable.draw(canvas);
-            Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable2.setBounds(rectangle);
-            drawable2.draw(canvas);
-        } else if (rectangle2.width() < Constants.SCREEN_WIDTH / 4) {
-            Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus_short);
-            drawable.mutate();
-            drawable.setBounds(rectangle2);
-            drawable.draw(canvas);
-            Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable2.setBounds(rectangle);
-            drawable2.draw(canvas);
-        } else {
-            Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable.mutate();
-            drawable.setBounds(rectangle);
-            drawable.draw(canvas);
-            Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-            drawable2.setBounds(rectangle2);
-            drawable2.draw(canvas);
-        }
-    }*/
 }
