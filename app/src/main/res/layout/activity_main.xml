@@ -26,7 +26,7 @@
         android:layout_width="110dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/alienblue2" />
+        android:background="@drawable/facemask1" />
 
     <TextView
         android:layout_width="wrap_content"

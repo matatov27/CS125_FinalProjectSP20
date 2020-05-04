@@ -1,8 +1,11 @@
 package com.example.cs125_finalproject;
 
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+
 
 public class Obstacle implements GameObject {
     private Rect rectangle;
@@ -16,6 +19,9 @@ public class Obstacle implements GameObject {
 
     public Rect getRectangle() {
         return rectangle;
+    }
+    public Rect getRectangle2() {
+        return rectangle2;
     }
 
     public void incrementY(float y) {
@@ -32,17 +38,17 @@ public class Obstacle implements GameObject {
 
     @Override
     public void update() {
-
     }
 
     @Override
     public void draw(Canvas canvas) {
-        Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-        drawable.mutate();
-        drawable.setBounds(rectangle);
-        drawable.draw(canvas);
-        Drawable drawable2 = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.coronavirus);
-        drawable2.setBounds(rectangle2);
-        drawable2.draw(canvas);
+        Bitmap mBitmap = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2);
+        mBitmap = Bitmap.createBitmap(mBitmap, 0, 0, getRectangle().width(), getRectangle().height());
+        canvas.drawBitmap(mBitmap, rectangle.left, rectangle.top, null);
+        Bitmap mBitmap2 = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2);
+        mBitmap = Bitmap.createBitmap(mBitmap2, getRectangle().width() + getRectangle2().left, 0, getRectangle2().width(), getRectangle2().height());
+        canvas.drawBitmap(mBitmap, rectangle2.left, rectangle2.top, null);
+
     }
+
 }
