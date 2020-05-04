@@ -40,7 +40,7 @@ public class Obstacle implements GameObject {
 
     @Override
     public void draw(Canvas canvas) {
-        Bitmap mBitmap = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.corona2min);
+        Bitmap mBitmap = BitmapFactory.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.reducedpic);
         Bitmap mBitmap1 = Bitmap.createBitmap(mBitmap, 0, 0, rectangle.width(), rectangle.height());
         canvas.drawBitmap(mBitmap1, rectangle.left, rectangle.top, null);
         Bitmap mBitmap2 = Bitmap.createBitmap(mBitmap, rectangle.width() + rectangle2.left, 0, rectangle2.width(), rectangle2.height());
