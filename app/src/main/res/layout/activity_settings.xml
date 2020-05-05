@@ -30,6 +30,28 @@
         android:fontFamily="serif-monospace"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/startButton" />
+    <Button
+        android:id="@+id/setCharacter1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue Alien"
+        android:textColor="#93B5E5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/setCharacter2" />
+    <Button
+        android:id="@+id/setCharacter2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green Alien"
+        android:textColor="#93B5E5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/backButton" />
 
 
 </LinearLayout>

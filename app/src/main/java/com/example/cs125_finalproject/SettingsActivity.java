@@ -11,6 +11,8 @@ import android.widget.Button;
 public class SettingsActivity extends AppCompatActivity {
 
     private Button backButton;
+    private Button setCharacter1;
+    private Button setCharacter2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,20 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openMainActivity();
+            }
+        });
+        setCharacter1 = findViewById(R.id.setCharacter1);
+        setCharacter1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Constants.WHICH_PLAYER = 1;
+            }
+        });
+        setCharacter2 = findViewById(R.id.setCharacter2);
+        setCharacter2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Constants.WHICH_PLAYER = 2;
             }
         });
     }
