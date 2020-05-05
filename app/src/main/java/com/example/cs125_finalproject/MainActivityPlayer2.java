@@ -7,9 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//this activity has the main screen, about us button, click player to start, and the default blue player
+//this activity has the main screen, about us button, click player to start, and the green player
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityPlayer2 extends AppCompatActivity {
     private Button startButton;
     private Button aboutUsButton;
     private Button settings;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_player2);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         startButton = findViewById(R.id.startButton);
@@ -44,16 +44,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void openGameActivity() {
-        Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
+        Intent gameIntent = new Intent(MainActivityPlayer2.this, GameActivity.class);
         startActivity(gameIntent);
         finish();
     }
     public void openAboutUsActivity() {
-        Intent aboutUsIntent = new Intent(MainActivity.this, AboutUsActivity.class);
+        Intent aboutUsIntent = new Intent(MainActivityPlayer2.this, AboutUsActivity.class);
         startActivity(aboutUsIntent);
     }
     public void openSettingsActivity() {
-        Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+        Intent settingsIntent = new Intent(MainActivityPlayer2.this, SettingsActivity.class);
         startActivity(settingsIntent);
     }
 }

@@ -13,6 +13,7 @@ public class SettingsActivity extends AppCompatActivity {
     private Button backButton;
     private Button setCharacter1;
     private Button setCharacter2;
+    public static boolean greenCharacter =  false;
 
     //this activity allows you to choose music? and player
 
@@ -41,13 +42,16 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Constants.WHICH_PLAYER = 2;
-                openMainActivity();
+                openMainActivityGreen();
             }
         });
     }
     public void openMainActivity() {
-        Intent aboutUsIntent = new Intent(SettingsActivity.this, MainActivity.class);
-        startActivity(aboutUsIntent);
-        finish();
+        Intent openMain = new Intent(SettingsActivity.this, MainActivity.class);
+        startActivity(openMain);
+    }
+    public void openMainActivityGreen() {
+        Intent openMainGreen = new Intent(SettingsActivity.this, MainActivityPlayer2.class);
+        startActivity(openMainGreen);
     }
 }
