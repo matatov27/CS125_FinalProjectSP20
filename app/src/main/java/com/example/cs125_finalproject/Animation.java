@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+//https://www.youtube.com/watch?v=l8-1ZtxA29Y
 
 public class Animation {
     private Bitmap[] frames;

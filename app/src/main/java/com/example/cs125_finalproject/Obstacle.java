@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 
-
+//https://www.youtube.com/watch?v=Gs5OTAldsMc
 public class Obstacle implements GameObject {
     private Rect rectangle;
     private Rect rectangle2;

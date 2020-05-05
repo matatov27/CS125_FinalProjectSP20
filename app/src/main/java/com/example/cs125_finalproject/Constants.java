@@ -1,6 +1,7 @@
 package com.example.cs125_finalproject;
 
 import android.content.Context;
+//https://www.youtube.com/watch?v=Rliwg0sELJo
 
 public class Constants {
     public static int SCREEN_WIDTH;

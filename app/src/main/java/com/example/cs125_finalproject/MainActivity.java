@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//this activity has the main screen, about us button, click player to start, settings allow you to choose different players
+
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private Button aboutUsButton;

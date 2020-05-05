@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import java.util.ArrayList;
-
+//https://www.youtube.com/watch?v=Gs5OTAldsMc
 public class ObstacleManager {
     //higherIndex = lower on screen = higher y values
     private ArrayList<Obstacle> obstacles;

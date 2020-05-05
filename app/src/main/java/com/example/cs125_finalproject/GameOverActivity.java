@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+//this activity starts when the game is over and resets the game but keeps the highscore
+
 public class GameOverActivity extends AppCompatActivity {
     private Button backButton;
 

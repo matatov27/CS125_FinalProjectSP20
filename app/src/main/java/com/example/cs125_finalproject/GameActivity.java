@@ -9,6 +9,8 @@ import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
+//this activity starts the game
+
 public class GameActivity extends Activity {
 
     private MediaPlayer mediaPlayer;

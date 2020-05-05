@@ -2,6 +2,7 @@ package com.example.cs125_finalproject;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
+//https://www.youtube.com/watch?v=AL92LrbDNY0
 
 public class MainThread extends Thread {
     public static final int MAX_FPS = 30;

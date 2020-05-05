@@ -14,6 +14,8 @@ public class SettingsActivity extends AppCompatActivity {
     private Button setCharacter1;
     private Button setCharacter2;
 
+    //this activity allows you to choose music? and player
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);

@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.Rect;
-
+//https://www.youtube.com/watch?v=Gs5OTAldsMc
 public class RectPlayer implements GameObject {
     private Rect rectangle;
 

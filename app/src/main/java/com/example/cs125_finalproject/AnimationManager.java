@@ -2,6 +2,7 @@ package com.example.cs125_finalproject;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
+//https://www.youtube.com/watch?v=l8-1ZtxA29Y
 
 public class AnimationManager {
     private Animation[] animations;

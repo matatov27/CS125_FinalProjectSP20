@@ -8,7 +8,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 
-import androidx.appcompat.app.AppCompatActivity;
+//https://www.youtube.com/watch?v=cdjD_YD0obQ
 
 public class GameplayScene extends GameActivity implements Scene {
     private RectPlayer player;
