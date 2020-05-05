@@ -10,13 +10,13 @@ import android.view.MotionEvent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameplayScene extends AppCompatActivity implements Scene {
+public class GameplayScene extends GameActivity implements Scene {
     private RectPlayer player;
     private Point playerPoint;
     private ObstacleManager obstacleManager;
     private boolean movingPlayer = false;
 
-    private boolean gameOver = false;
+    public static boolean gameOver = false;
     private long gameOverTime;
     private long frameTime;
 
@@ -36,12 +36,6 @@ public class GameplayScene extends AppCompatActivity implements Scene {
         movingPlayer = false;
     }
 
-    @Override
-    public void terminate() {
-        SceneManager.ACTIVE_SCENE = 0;
-    }
-
-    @Override
     public void recieveTouch(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
@@ -55,7 +49,7 @@ public class GameplayScene extends AppCompatActivity implements Scene {
                     movingPlayer = true;
                     break;
                 }
-                if(gameOver && System.currentTimeMillis() - gameOverTime >= 500) {
+                if(gameOver) {
                     reset();
                     gameOver = false;
                 }
@@ -71,7 +65,6 @@ public class GameplayScene extends AppCompatActivity implements Scene {
 
     }
 
-    @Override
     public void draw(Canvas canvas) {
         canvas.drawColor(Color.WHITE);
         player.draw(canvas);
@@ -94,7 +87,6 @@ public class GameplayScene extends AppCompatActivity implements Scene {
         }
     }
 
-    @Override
     public void update() {
         if (!gameOver) {
             if(frameTime < Constants.INIT_TIME)

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private Button aboutUsButton;
-    private Button gameOver;
+    private Button settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +32,25 @@ public class MainActivity extends AppCompatActivity {
                 openAboutUsActivity();
             }
         });
-        gameOver = findViewById(R.id.test);
-        gameOver.setOnClickListener(new View.OnClickListener() {
+        settings = findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testGameOver();
+                openSettingsActivity();
             }
         });
-
     }
     public void openGameActivity() {
         Intent gameIntent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(gameIntent);
         finish();
     }
-    public void testGameOver() {
-        Intent gameIntent = new Intent(MainActivity.this, GameOverActivity.class);
-        startActivity(gameIntent);
-        finish();
-    }
     public void openAboutUsActivity() {
         Intent aboutUsIntent = new Intent(MainActivity.this, AboutUsActivity.class);
         startActivity(aboutUsIntent);
+    }
+    public void openSettingsActivity() {
+        Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(settingsIntent);
     }
 }

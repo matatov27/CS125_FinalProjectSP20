@@ -49,4 +49,11 @@ public class GameActivity extends Activity {
             mediaPlayer.start();
         }
     }
+    public void gameOver() {
+        if (GameplayScene.gameOver) {
+            Intent gameIntent = new Intent(GameActivity.this, GameOverActivity.class);
+            startActivity(gameIntent);
+            finish();
+        }
+    }
 }
