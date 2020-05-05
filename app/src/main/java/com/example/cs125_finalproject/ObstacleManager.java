@@ -15,7 +15,6 @@ public class ObstacleManager {
     private long startTime;
     private long initTime;
     private int score = 0;
-    //the highScore part is also not from the tutorial, just something I added
     public static int highScore;
 
 

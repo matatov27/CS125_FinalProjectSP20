@@ -1,5 +1,6 @@
 package com.example.cs125_finalproject;
 
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -7,7 +8,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.MotionEvent;
 
-public class GameplayScene implements Scene {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class GameplayScene extends AppCompatActivity implements Scene {
     private RectPlayer player;
     private Point playerPoint;
     private ObstacleManager obstacleManager;
@@ -15,8 +18,6 @@ public class GameplayScene implements Scene {
 
     private boolean gameOver = false;
     private long gameOverTime;
-
-    private OrientationData orientationData;
     private long frameTime;
 
     private Rect r = new Rect();
@@ -26,9 +27,6 @@ public class GameplayScene implements Scene {
         playerPoint = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
         player.update(playerPoint);
         obstacleManager = new ObstacleManager(300, 450,300, ObstacleManager.highScore);
-
-        orientationData = new OrientationData();
-        orientationData.register();
         frameTime = System.currentTimeMillis();
     }
     public void reset() {
@@ -60,7 +58,6 @@ public class GameplayScene implements Scene {
                 if(gameOver && System.currentTimeMillis() - gameOverTime >= 500) {
                     reset();
                     gameOver = false;
-                    orientationData.newGame();
                 }
             case MotionEvent.ACTION_MOVE:
                 if (movingPlayer && !gameOver) {
@@ -104,16 +101,6 @@ public class GameplayScene implements Scene {
                 frameTime = Constants.INIT_TIME;
             int elapsedTime = (int)(System.currentTimeMillis() - frameTime);
             frameTime = System.currentTimeMillis();
-            if(orientationData.getOrientation() != null && orientationData.getStartOrientation() != null) {
-                float pitch = orientationData.getOrientation()[1] - orientationData.getStartOrientation()[1];
-                float roll = orientationData.getOrientation()[2] - orientationData.getStartOrientation()[2];
-
-                float xSpeed = 2 * roll * Constants.SCREEN_WIDTH/1000f;
-                float ySpeed = pitch * Constants.SCREEN_HEIGHT/1000f;
-
-                playerPoint.x += Math.abs(xSpeed*elapsedTime) > 5 ? xSpeed*elapsedTime : 0;
-                playerPoint.y -= Math.abs(ySpeed*elapsedTime) > 5 ? ySpeed*elapsedTime : 0;
-            }
             if(playerPoint.x < 0)
                 playerPoint.x = 0;
             else if(playerPoint.x > Constants.SCREEN_WIDTH)
@@ -125,8 +112,6 @@ public class GameplayScene implements Scene {
 
             player.update(playerPoint);
             obstacleManager.update();
-            /*if (MainActivity.startGame > 0) {
-            }*/
             if (obstacleManager.playerCollide(player)) {
                 gameOver = true;
                 gameOverTime = System.currentTimeMillis();

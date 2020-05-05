@@ -11,8 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Social Distancing"
-        android:paddingBottom="@android:dimen/app_icon_size"
+        android:text="Who are We"
         android:textColor="#93B5E5"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -21,17 +20,10 @@
         android:layout_above="@+id/startButton"
         />
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="110dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/facemask1" />
     <TextView
-        android:id="@+id/startText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the Player to Start"
+        android:text="Sarah Matatov"
         android:paddingTop="@android:dimen/app_icon_size"
         android:paddingBottom="@android:dimen/app_icon_size"
         android:textColor="#93B5E5"
@@ -39,18 +31,39 @@
         android:textStyle="bold"
         android:fontFamily="serif-monospace"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/aboutUsButton"
         />
-
-    <Button
-        android:id="@+id/aboutUsButton"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/startText"
-        android:fontFamily="serif-monospace"
-        android:text="About Us"
+        android:background="@drawable/sarah" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ellinor Kalderen"
+        android:paddingTop="@android:dimen/app_icon_size"
+        android:paddingBottom="@android:dimen/app_icon_size"
         android:textColor="#93B5E5"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_centerHorizontal="true"
+        />
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ellinor"
+        />
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Game"
+        android:textColor="#93B5E5"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/startButton" />
+
+
 </LinearLayout>

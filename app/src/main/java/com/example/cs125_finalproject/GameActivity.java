@@ -1,6 +1,7 @@
 package com.example.cs125_finalproject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -11,7 +12,6 @@ import android.view.WindowManager;
 public class GameActivity extends Activity {
 
     private MediaPlayer mediaPlayer;
-    public MotionEvent event;
     public static int startGame = 0;
 
     @Override

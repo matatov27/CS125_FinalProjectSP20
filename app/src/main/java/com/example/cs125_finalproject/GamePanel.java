@@ -10,7 +10,6 @@ import android.view.SurfaceView;
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     private MainThread thread;
     private SceneManager manager;
-    private Rect r = new Rect();
 
     public GamePanel(Context context) {
         super(context);
@@ -20,7 +19,6 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         manager = new SceneManager();
         setFocusable(true);
     }
-
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) { }
 

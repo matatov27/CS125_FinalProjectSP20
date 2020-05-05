@@ -52,7 +52,6 @@ public class Animation {
         else
             rect.top = rect.bottom - (int)(rect.width() * (1/whRatio));
     }
-
     public void update() {
         if(!isPlaying)
             return;

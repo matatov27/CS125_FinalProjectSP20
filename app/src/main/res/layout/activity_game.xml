@@ -8,13 +8,4 @@
     android:orientation="vertical"
     android:gravity="bottom"
     >
-
-    <Button
-        android:id="@+id/resumeButton"
-        android:paddingLeft="@android:dimen/app_icon_size"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/pause" />
-
-
 </LinearLayout>
