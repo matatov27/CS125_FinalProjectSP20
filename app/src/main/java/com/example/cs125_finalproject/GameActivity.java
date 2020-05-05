@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 //this activity starts the game
-
 public class GameActivity extends Activity {
 
     private MediaPlayer mediaPlayer;
@@ -25,7 +24,7 @@ public class GameActivity extends Activity {
         Constants.SCREEN_WIDTH = dm.widthPixels;
         Constants.SCREEN_HEIGHT = dm.heightPixels;
 
-        // this is isn't from the tutorial, I just decided to try adding music
+        //starts the music when the game starts, the MUSIC_SETTINGS constant could be used to make audio options in the future
         if (Constants.MUSIC_SETTINGS) {
             mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.saftey);
             mediaPlayer.setLooping(true);
