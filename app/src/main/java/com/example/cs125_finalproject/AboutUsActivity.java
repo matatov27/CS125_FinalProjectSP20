@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+//just our names and pictures :)
 
 public class AboutUsActivity extends AppCompatActivity {
     private Button backButton;
