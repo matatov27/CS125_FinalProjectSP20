@@ -10,11 +10,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
-    private Button muteMusic;
     private Button backButton;
     private Button setCharacter1;
     private Button setCharacter2;
-    public static boolean greenCharacter =  false;
 
     //this activity allows you to choose music? and player
 
@@ -48,20 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
                 openMainActivityGreen();
             }
         });
-        //would only mute and wouldn't unmute
-        /*muteMusic = findViewById(R.id.muteButton);
-        muteMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Constants.MUSIC_SETTINGS = true) {
-                    Constants.MUSIC_SETTINGS = false;
-                    muteMusic.setActivated(true);
-                } else if (Constants.MUSIC_SETTINGS = false){
-                    Constants.MUSIC_SETTINGS = true;
-                    muteMusic.setActivated(false);
-                }
-            }
-        });*/
+
     }
     public void openMainActivity() {
         Intent openMain = new Intent(SettingsActivity.this, MainActivity.class);

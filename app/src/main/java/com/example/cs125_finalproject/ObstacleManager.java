@@ -76,6 +76,15 @@ public class ObstacleManager {
             canvas.drawText("" + score, 50, 100, paint);
             canvas.drawText("High Score: " + highScore, (2 * Constants.SCREEN_WIDTH / 3),
                     100, paint);
+            if (score > 5) {
+                canvas.drawText("Level 2", 400, 100, paint);
+            }
+            if (score > 15) {
+                canvas.drawText("Level 3", 400, 100, paint);
+            }
+            if (score > 30) {
+                canvas.drawText("Level 4", 400, 100, paint);
+            }
         }
     }
 }

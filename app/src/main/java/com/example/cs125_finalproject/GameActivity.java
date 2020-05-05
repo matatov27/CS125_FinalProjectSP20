@@ -1,11 +1,9 @@
 package com.example.cs125_finalproject;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -51,13 +49,6 @@ public class GameActivity extends Activity {
             mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.saftey);
             mediaPlayer.setLooping(true);
             mediaPlayer.start();
-        }
-    }
-    public void gameOver() {
-        if (GameplayScene.gameOver) {
-            Intent gameIntent = new Intent(GameActivity.this, GameOverActivity.class);
-            startActivity(gameIntent);
-            finish();
         }
     }
 }

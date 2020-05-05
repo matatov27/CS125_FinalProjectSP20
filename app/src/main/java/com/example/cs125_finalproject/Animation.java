@@ -40,19 +40,9 @@ public class Animation {
     public void draw(Canvas canvas, Rect destination) {
         if(!isPlaying)
             return;
-
-        scaleRect(destination);
-
         canvas.drawBitmap(frames[frameIndex], null, destination, new Paint());
     }
 
-    private void scaleRect(Rect rect) {
-        float whRatio = (float)(frames[frameIndex].getWidth())/frames[frameIndex].getHeight();
-        if(rect.width() > rect.height())
-            rect.left = rect.right - (int)(rect.height() * whRatio);
-        else
-            rect.top = rect.bottom - (int)(rect.width() * (1/whRatio));
-    }
     public void update() {
         if(!isPlaying)
             return;
