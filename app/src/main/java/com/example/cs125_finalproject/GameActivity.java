@@ -28,9 +28,11 @@ public class GameActivity extends Activity {
         Constants.SCREEN_HEIGHT = dm.heightPixels;
 
         // this is isn't from the tutorial, I just decided to try adding music
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.saftey);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        if (Constants.MUSIC_SETTINGS) {
+            mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.saftey);
+            mediaPlayer.setLooping(true);
+            mediaPlayer.start();
+        }
         setContentView(new GamePanel(this));
     }
     //pauses the music when the app is exited
@@ -45,7 +47,7 @@ public class GameActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(mediaPlayer == null) {
+        if(mediaPlayer == null && Constants.MUSIC_SETTINGS) {
             mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.saftey);
             mediaPlayer.setLooping(true);
             mediaPlayer.start();

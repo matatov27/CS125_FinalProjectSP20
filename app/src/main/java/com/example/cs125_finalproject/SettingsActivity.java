@@ -7,9 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
-
+    private Button muteMusic;
     private Button backButton;
     private Button setCharacter1;
     private Button setCharacter2;
@@ -33,6 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
         setCharacter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(SettingsActivity.this, "You are now the Blue Player", Toast.LENGTH_SHORT).show();
                 Constants.WHICH_PLAYER = 1;
                 openMainActivity();
             }
@@ -41,10 +43,25 @@ public class SettingsActivity extends AppCompatActivity {
         setCharacter2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(SettingsActivity.this, "You are now the Green Player", Toast.LENGTH_SHORT).show();
                 Constants.WHICH_PLAYER = 2;
                 openMainActivityGreen();
             }
         });
+        //would only mute and wouldn't unmute
+        /*muteMusic = findViewById(R.id.muteButton);
+        muteMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Constants.MUSIC_SETTINGS = true) {
+                    Constants.MUSIC_SETTINGS = false;
+                    muteMusic.setActivated(true);
+                } else if (Constants.MUSIC_SETTINGS = false){
+                    Constants.MUSIC_SETTINGS = true;
+                    muteMusic.setActivated(false);
+                }
+            }
+        });*/
     }
     public void openMainActivity() {
         Intent openMain = new Intent(SettingsActivity.this, MainActivity.class);
