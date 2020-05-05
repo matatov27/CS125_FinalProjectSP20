@@ -7,8 +7,8 @@ import android.graphics.Rect;
 //https://www.youtube.com/watch?v=l8-1ZtxA29Y
 
 public class Animation {
-    private Bitmap[] frames;
-    private int frameIndex;
+    private Bitmap[] frameArray;
+    private int arrayIndex;
 
     private boolean isPlaying = false;
     public boolean isPlaying() {
@@ -16,7 +16,7 @@ public class Animation {
     }
     public void play() {
         isPlaying = true;
-        frameIndex = 0;
+        arrayIndex = 0;
         lastFrame = System.currentTimeMillis();
     }
 
@@ -29,8 +29,8 @@ public class Animation {
     private long lastFrame;
 
     public Animation(Bitmap[] frames, float animTime) {
-        this.frames = frames;
-        frameIndex = 0;
+        this.frameArray = frames;
+        arrayIndex = 0;
 
         frameTime = animTime/frames.length;
 
@@ -40,7 +40,7 @@ public class Animation {
     public void draw(Canvas canvas, Rect destination) {
         if(!isPlaying)
             return;
-        canvas.drawBitmap(frames[frameIndex], null, destination, new Paint());
+        canvas.drawBitmap(frameArray[arrayIndex], null, destination, new Paint());
     }
 
     public void update() {
@@ -48,8 +48,8 @@ public class Animation {
             return;
 
         if(System.currentTimeMillis() - lastFrame > frameTime*1000) {
-            frameIndex++;
-            frameIndex = frameIndex >= frames.length ? 0 : frameIndex;
+            arrayIndex++;
+            arrayIndex = arrayIndex >= frameArray.length ? 0 : arrayIndex;
             lastFrame = System.currentTimeMillis();
         }
     }

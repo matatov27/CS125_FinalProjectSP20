@@ -5,31 +5,31 @@ import android.graphics.Rect;
 //https://www.youtube.com/watch?v=l8-1ZtxA29Y
 
 public class AnimationManager {
-    private Animation[] animations;
-    private int animationIndex = 0;
+    private Animation[] animArray;
+    private int animIndex = 0;
 
     public AnimationManager(Animation[] animations) {
-        this.animations = animations;
+        this.animArray = animations;
     }
 
     public void playAnim(int index) {
-        for(int i = 0; i < animations.length; i++) {
+        for(int i = 0; i < animArray.length; i++) {
             if(i == index) {
-                if(!animations[index].isPlaying())
-                    animations[i].play();
+                if(!animArray[index].isPlaying())
+                    animArray[i].play();
             } else
-                animations[i].stop();
+                animArray[i].stop();
         }
-        animationIndex = index;
+        animIndex = index;
     }
 
     public void draw(Canvas canvas, Rect rect) {
-        if(animations[animationIndex].isPlaying())
-            animations[animationIndex].draw(canvas, rect);
+        if(animArray[animIndex].isPlaying())
+            animArray[animIndex].draw(canvas, rect);
     }
 
     public void update() {
-        if(animations[animationIndex].isPlaying())
-            animations[animationIndex].update();
+        if(animArray[animIndex].isPlaying())
+            animArray[animIndex].update();
     }
 }

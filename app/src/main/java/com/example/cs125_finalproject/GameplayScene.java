@@ -1,6 +1,5 @@
 package com.example.cs125_finalproject;
 
-import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;

@@ -13,7 +13,6 @@ public class MainActivityPlayer2 extends AppCompatActivity {
     private Button startButton;
     private Button aboutUsButton;
     private Button settings;
-    public static boolean greenCharacter = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
