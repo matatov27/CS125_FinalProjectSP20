@@ -33,6 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Constants.WHICH_PLAYER = 1;
+                openMainActivity();
             }
         });
         setCharacter2 = findViewById(R.id.setCharacter2);
@@ -40,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Constants.WHICH_PLAYER = 2;
+                openMainActivity();
             }
         });
     }
